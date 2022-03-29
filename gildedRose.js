@@ -22,9 +22,13 @@ class Item {
     updateQualityFor() {
         this.updateQualityItem();
         this.updateSellIn();
-        if (this.items[i].sellIn < 0) {
+        if (this.hasExpired()) {
             this.expiredItem();
         }
+    }
+
+    hasExpired() {
+        return this.items[i].sellIn < 0;
     }
 
     expiredItem() {
@@ -42,7 +46,7 @@ class Item {
             if (this.items[i].quality < 50) {
                 this.items[i].quality = this.items[i].quality + 1;
             }
-            
+
         }
     }
 
