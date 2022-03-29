@@ -10,8 +10,9 @@ class Item {
     constructor(items=[]){
       this.items = items;
     }
+
     updateQuality() {
-      for (let i = 0; i < this.items.length; i++) {
+      this.items.forEach(item => {
         if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
           if (this.items[i].quality > 0) {
             if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
@@ -55,7 +56,7 @@ class Item {
             }
           }
         }
-      }
+      });
   
       return this.items;
     }
