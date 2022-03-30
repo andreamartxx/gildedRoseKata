@@ -89,4 +89,13 @@ const {Shop, Item} = require("./gildedRose");
 			expect(items[0].quality).toBe(50);
 		});
 
+		it('should not increase quality by 2 when sellIn < 6 and quality = 49 ', function() {
+			const gildedRose = new Shop([
+				new Item('Backstage passes to a TAFKAL80ETC concert', 4, 49)
+			]);
+			const items = gildedRose.updateQuality();
+
+			expect(items[0].quality).toBe(50);
+		});
+
   });
