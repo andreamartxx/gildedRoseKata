@@ -71,4 +71,13 @@ const {Shop, Item} = require("./gildedRose");
 			expect(items[0].quality).toBe(42);
 		});
 
+		it('increase quality by 3 when sellIn < 6 ', function() {
+			const gildedRose = new Shop([
+				new Item('Backstage passes to a TAFKAL80ETC concert', 4, 40)
+			]);
+			const items = gildedRose.updateQuality();
+
+			expect(items[0].quality).toBe(43);
+		});
+
   });
