@@ -25,4 +25,11 @@ const {Shop, Item} = require("./gildedRose");
 			expect(items[0].quality).toBe(50);
 		});
 
+		it('increase quality for Aged Brie when it expires by 2', function() {
+			const gildedRose = new Shop([new Item('Aged Brie', -1, 45)]);
+			const items = gildedRose.updateQuality();
+
+			expect(items[0].quality).toBe(47);
+		});
+
   });
