@@ -17,4 +17,12 @@ const {Shop, Item} = require("./gildedRose");
 
 			expect(items[0].quality).toBe(11);
 		});
+
+		it('never increase quality for Aged Brie over 50', function() {
+			const gildedRose = new Shop([new Item('Aged Brie', 5, 50)]);
+			const items = gildedRose.updateQuality();
+
+			expect(items[0].quality).toBe(50);
+		});
+
   });
