@@ -51,4 +51,14 @@ const {Shop, Item} = require("./gildedRose");
 			expect(items[0].sellIn).toBe(5);
 		});
 
-  });
+		it('quality doesn not change when sellIn < 0', function() {
+			const gildedRose = new Shop([
+				new Item('Sulfuras, Hand of Ragnaros', -1, 40)
+			]);
+			const items = gildedRose.updateQuality();
+
+			expect(items[0].quality).toBe(40);
+		});
+	});
+
+	
