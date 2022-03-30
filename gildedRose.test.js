@@ -10,4 +10,11 @@ const {Shop, Item} = require("./gildedRose");
 		});
 	});
 
-;
+	describe('Aged Brie item', function() {
+		it('increase quality for Aged Brie by 1', function() {
+			const gildedRose = new Shop([new Item('Aged Brie', 5, 10)]);
+			const items = gildedRose.updateQuality();
+
+			expect(items[0].quality).toBe(11);
+		});
+  });
